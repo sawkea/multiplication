@@ -21,9 +21,28 @@
     </header>
     <!-- Main -->
     <main>
-    
-    </main>
+        <?php
 
+            echo "<h2>Choisir une table dans la liste</h2>";
+
+            // Variable qui ajoutera l'attribut selected de la liste déroulante
+            $selected = '';
+    
+            // Parcours du tableau
+            echo '<select name="tables">',"\n";
+            for($i=1;$i<=10;$i++)
+            {
+        
+            // Affichage de la ligne
+            echo "\t",'<option value="', $i ,'"', $selected ,'>', $i ,'</option>',"\n";
+            // Remise à zéro de $selected
+            $selected='';
+            }
+            echo '</select>',"\n";
+            ?>
+
+    </main>
+           
 
 </body>
 </html>

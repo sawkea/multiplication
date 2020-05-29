@@ -21,7 +21,11 @@
     </header>
     <!-- Main -->
     <main>
-    
+    <?php
+            echo "<h2>Révision Ajax</h2>";
+
+            
+        ?>
     </main>
 
 </body>
