@@ -1,0 +1,19 @@
+{
+  "name": "package",
+  "version": "1.0.0",
+  "description": "site php",
+  "main": "index.js",
+  "scripts": {
+    "sass": "sass --watch style.scss:style.css --style expanded"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/sawkea/multiplication.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/sawkea/multiplication/issues"
+  },
+  "homepage": "https://github.com/sawkea/multiplication#readme"
+}
