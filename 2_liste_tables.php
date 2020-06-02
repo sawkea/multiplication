@@ -14,7 +14,7 @@
             <li><a href="index.php">Table X 3</a></li>
             <li><a href="2_liste_tables.php">Liste des tables</a></li>
             <li><a href="3_choix_tables.php">Choix des tables</a></li>
-            <li><a href="4_revision">Révision</a></li>
+            <li><a href="4_revision.php">Révision</a></li>
             <li><a href="5_super_revision.php">Super mode révision</a></li>
             <li><a href="6_revision_ajax.php">Révision avec Ajax</a></li>
         </nav>
@@ -24,7 +24,20 @@
         <?php
 
             echo "<h2>Choisir une table dans la liste</h2>";
+        ?>
 
+        
+            
+
+            <form action="action.php" method="post">
+            <select name="demande">
+            <option selected="selected" value="table">Table N°</option>
+        
+            <p><input type="submit" value="OK"></p>
+            </form>
+
+
+        <?php
             // Variable qui ajoutera l'attribut selected de la liste déroulante
             $selected = '';
     

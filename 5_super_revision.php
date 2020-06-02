@@ -14,7 +14,7 @@
             <li><a href="index.php">Table X 3</a></li>
             <li><a href="2_liste_tables.php">Liste des tables</a></li>
             <li><a href="3_choix_tables.php">Choix des tables</a></li>
-            <li><a href="4_revision">Révision</a></li>
+            <li><a href="4_revision.php">Révision</a></li>
             <li><a href="5_super_revision.php">Super mode révision</a></li>
             <li><a href="6_revision_ajax.php">Révision avec Ajax</a></li>
         </nav>
@@ -24,8 +24,41 @@
     <?php
             echo "<h2>Super révision</h2>";
 
-            
-        ?>
+session_start();
+if (isset($_GET['nombre'])) {
+    $_SESSION['nombre'] = $_GET['nombre'];
+}
+if (isset($_GET['signe'])) {
+    $_SESSION['signe'] = $_GET['signe'];
+}    ?>
+	<div id="page">
+	<nav> 
+	<ul id="choix_table">
+		<p> La table selectionnée</p>
+                <?php
+                    for ($i = 1; $i < 10; ++$i) {
+                        $classe = (isset($_SESSION['nombre']) && $_SESSION['nombre'] == $i) ? ' style="background: red;"' : '';
+		        echo '<a href="?nombre=' . $i . '" id="table' . $i . '"><button' . $classe . '>' . $i . '</button></a>';
+                    }
+                 ?>
+		<a href="?signe=plus" id="plus"><button>+</button></a>
+		<a href="?signe=fois" id="fois"><button>X</button></a>
+	</nav>
+	<section>
+		<?php
+                if (isset($_SESSION['nombre'], $_SESSION['signe'])) {
+		  if  ($_SESSION['signe']=="plus"){
+		 	for ($i=1; $i<=10;$i++)
+		 		echo $_SESSION["nombre"]. "+" .$i. "=" .$_SESSION["nombre"] + $i ."<br>";
+		  }
+		  elseif  ($_SESSION['signe']=="fois"){
+		 	for ($i=1; $i<=10;$i++)
+		 		echo $_SESSION["nombre"]. "*" .$i. "=" .$i * $_SESSION["nombre"] ."<br>";
+		  }
+                }
+		?>
+
+
     </main>
 
 
