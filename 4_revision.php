@@ -18,7 +18,7 @@
 		        <p> La table selectionnée</p>
                 <?php
                     for ($i = 1; $i < 10; ++$i) {
-                        $classe = (isset($_SESSION['nombre']) && $_SESSION['nombre'] == $i) ? ' style="background: red;"' : '';
+                        $classe = (isset($_SESSION['nombre']) && $_SESSION['nombre'] == $i) ? ' style="background: blue;"' : '';
 		        echo '<a href="?nombre=' . $i . '" id="table' . $i . '"><button' . $classe . '>' . $i . '</button></a>';
                     }
                 ?>

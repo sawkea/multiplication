@@ -1,0 +1,30 @@
+.container{
+    width: 73.125rem;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.font_title{
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+a{  
+    text-decoration: none;      
+}
+
+li{
+    list-style: none;
+    padding-left: 0;
+}
+
+.flex{
+    display: flex;
+}
+
+.between{
+    justify-content: space-between;
+}
+
+.text_center{
+    text-align: center;
+}
