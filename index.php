@@ -17,6 +17,8 @@
             <li><a href="4_revision.php">Révision</a></li>
             <li><a href="5_super_revision.php">Super mode révision</a></li>
             <li><a href="6_revision_ajax.php">Révision avec Ajax</a></li>
+            <li><a href="test.php">page de test</a></li>
+
         </nav>
     </header>
     <!-- Main -->

@@ -42,7 +42,7 @@
             $selected = '';
     
             // Parcours du tableau
-            echo '<select name="tables">',"\n";
+            echo '<select name="demande">',"\n";
             for($i=1;$i<=10;$i++)
             {
         

@@ -26,6 +26,13 @@
 
             
         ?>
+
+<?php if ($expression == true): ?>
+  Ceci sera affiché si l'expression est vrai.
+<?php else: ?>
+  Sinon, ceci sera affiché.
+<?php endif; ?>
+
     </main>
 
 </body>
