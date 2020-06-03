@@ -46,12 +46,13 @@
                 // $choix = $_POST['table'];
                 // } else {
                 // $choix = 1; 
+
+                //la variable choix est égale à "si l'utilisateur choisis une table dans le tableau 
                 $choix = (isset($_POST['table'])) ? $_POST['table']: 1;
                 for( $j= 1; $j < 11; $j++){
                     echo $choix . " X ". $j. " = ".($choix*$j).
                      "<br/>";
                     }
-
                 ?>
                  <!-- for( $j= 2; $j < 11; $j++){
                     echo $choix . " X ". $j. " = ".($choix*$j).
