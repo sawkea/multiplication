@@ -1,11 +1,16 @@
+
+
+
+
+
 /* Variables générales */
 :root {
-	--font-principal :	'roboto';
-	--font-title :	'roboto';
+	--font-principal : 'Roboto', sans-serif;
+	--font-title :	   'Roboto', sans-serif;
 
-	--color-main :		 #73e8ff;
-	--color-text :		 #29b6f6;
-    --color-nav :        #0086c3;
+	--color-1 :		 #73e8ff;
+	--color-2 :		 #29b6f6;
+    --color-3 :      #0086c3;
 
 
 
@@ -17,7 +22,11 @@
 }
 
 
+body{
+	font-family: var(--font-principal);
+	font-weight: 400;
 
+}
 
 .container{
     width: 73.125rem;
@@ -25,13 +34,14 @@
     margin-right: auto;
 }
 .font_title{
-    font-family: var(--font-title);
+	font-family: var(--font-title);
+	font-weight: 700;
 }
 .color_title{
-    color: var(--color-text);
+    color: var(--color-3);
 }
 nav{
-    background-color: var(--color-nav);
+    background-color: var(--color-3);
     width : 100%;
     height: 3rem;
     font-family: var(--font-title);
@@ -41,11 +51,15 @@ a{
     text-decoration: none; 
     color: white;
 }
+a:hover{
+	color: var(--color-1);
+}
 
 li{
     list-style: none;
-    padding-left: 0;
+	padding-left: 0;
 }
+
 
 .flex{
     display: flex;
@@ -53,12 +67,54 @@ li{
 .align_center{
     align-items: center;
 }
-
 .between{
-    justify-content: space-between;
+	justify-content: space-between;
+}
+.around{
+    justify-content: space-around;
 }
 
 .text_center{
     text-align: center;
 }
 
+h1{
+	text-transform: uppercase;
+}
+
+
+
+
+
+
+/* RESET */
+
+html, body, div, span, 
+a, table, nav {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */ 
+footer, header, nav, section {
+	display: block;
+}
+body {
+	line-height: 1;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
