@@ -1,21 +1,29 @@
- <?php
+<?php
     include 'header.html';
 
     echo "<h2>Choisir une table de multiplication</h2>"
+    
 ?>
-
+    <?php
+    // Création de la fonction de multiplication
+    function multiplication($nombre){ // nom de fontion "multi" avec son paramètre "nombre"
+        for ($i = 1; $i <= 10; $i++){
+            echo $nombre . " X " . $i . " = " . $nombre * $i . "<br>";
+        }
+    }
+    ?>
     <!-- Formulaire table -->
-    <form action="?exo=3" method="post">
-        <input type="checkbox" name="table[]" value="1"/>1 <br>
-        <input type="checkbox" name="table[]" value="2"/>2 <br>
-        <input type="checkbox" name="table[]" value="3"/>3 <br>
-        <input type="checkbox" name="table[]" value="4"/>4 <br>
-        <input type="checkbox" name="table[]" value="5"/>5 <br>
-        <input type="checkbox" name="table[]" value="6"/>6 <br>
-        <input type="checkbox" name="table[]" value="7"/>7 <br>
-        <input type="checkbox" name="table[]" value="8"/>8 <br>
-        <input type="checkbox" name="table[]" value="9"/>9 <br>
-        <input type="checkbox" name="table[]" value="10"/>10 
+    <form action="" method="post">
+
+        <?php
+
+        // création d'une ckeckbox en php avec boucle for
+        for ($i = 1; $i <= 10; $i++){
+
+            echo("<INPUT TYPE='checkbox' name='check_list[]' VALUE='$i' />");
+            echo " ".$i." <br />";
+        }
+        ?>
 
         <div>
             <button type="submit">Valider</button>
@@ -23,12 +31,15 @@
     </form>
 
     <?php
-        if( isset($_POST["table"])){
-            for( $i = 0; $i < count($_POST["table"]); $i++){
-                for( $j= 0; $j < 11; $j++){
-                    echo $_POST["table"][$i] . " X ". $j. " = ".($_POST["table"][$i]*$j).
-                    "<br/>";
-                }
-            }
-        }
-    ?>
+
+		//Pour chaque case du tableau
+		if (!empty($_POST['check_list'])) {
+			
+			// Pour chaque propriété, une instruction est exécutée.
+			foreach ($_POST['check_list'] as $i) {
+				$nombre = $i;
+				multiplication($nombre);
+			}
+		}
+
+	?>

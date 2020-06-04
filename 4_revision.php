@@ -2,37 +2,79 @@
     include 'header.html';
 
     echo "<h2>Révision</h2>";
-        
-    session_start();
-        if (isset($_GET['nombre'])) {       
-        $_SESSION['nombre'] = $_GET['nombre'];
+?>        
+    <?php
+    // fonction pour afficher les commentaires de résultat
+    function super_revision($nombre, $resultat, $aleatoire)
+    {
+        echo "<br>" . $aleatoire . " X " . $nombre . " = " .$resultat . "<br><br>";
+
+        if ($resultat == ($aleatoire * $nombre)){
+            echo "Super! Tu es un vrai petit génie!";
         }
-        if (isset($_GET['signe'])) {
-        $_SESSION['signe'] = $_GET['signe'];
-        }   
-?>
 
-	<div id="page">
-	    <nav> 
-	        <ul id="choix_table">
-		        <p> La table selectionnée</p>
-                <?php
-                    for ($i = 1; $i < 10; ++$i) {
-                        $classe = (isset($_SESSION['nombre']) && $_SESSION['nombre'] == $i) ? ' style="background: blue;"' : '';
-		        echo '<a href="?nombre=' . $i . '" id="table' . $i . '"><button' . $classe . '>' . $i . '</button></a>';
-                    }
-                ?>
+        else if ($resultat !== ($aleatoire * $nombre)){
+            echo "Dommage, ne lâche pas, continu!";
+        }
+    }
+    ?>
+
+    <p>Choisi une table de multiplication</p>
+    <form action="" method="POST">
+		<select name="super_revision" id="">
+        <option value="1">Table 1</option>
+        <option value="2">Table 2</option>
+        <option value="3">Table 3</option>
+        <option value="4">Table 4</option>
+        <option value="5">Table 5</option>
+        <option value="6">Table 6</option>
+        <option value="7">Table 7</option>
+        <option value="8">Table 8</option>
+        <option value="9">Table 9</option>
+        <option value="10">Table 10</option>
+		</select>
 		
-        </nav>
-        
-	    <section>
+		<button>OK</button>
+	</form>
 
-		<?php
-            if (isset($_SESSION['nombre'], $_SESSION['signe'])) {
-		        if  ($_SESSION['signe']=="fois"){
-		 	        for ($i=1; $i<=10;$i++)
-                    echo $_SESSION["nombre"]. " X " .$i. " = " .$i * $_SESSION["nombre"] ."<br>";
-         
-                }
-            }
-		?>    
+	<?php
+		if (isset($_POST['super_revision'])) {
+			// Récupère la valeur du tableau form
+			$nombre = $_POST['super_revision'];
+			
+			//Génère un nombre aléatoire quand on valide le premier form
+			$aleatoire = mt_rand (0, 10);
+
+			// Affiche pour l'utilisateur
+			echo $aleatoire . " x " . $nombre . " = ? " . "<br>";
+		}
+	?>
+
+	
+	<form action="" method="post">
+		<!-- L'utilisateur entre un nombre -->
+		<input type="text" name='resultat' id="resultat" placeholder="Ex: 64">
+
+		<!-- Enregistre les $var avec input hidden (caché) -->
+		<input type="hidden" name ='aleatoireInput' value ='<?=$aleatoire?>'>
+		<input type="hidden" name ='super_revision' value ="<?=$nombre?>">
+		<button>VALIDER</button>
+
+	</form>
+
+
+	<?php
+		// Si le formulaire est validé, va à la suite
+		if (isset($_POST['resultat'])) 
+		{
+			// Récupère la valeur de aléatoire lors de la saisie du deuxième form
+			$aleatoire = $_POST['aleatoireInput'];
+
+			// Transforme la valeur de l'input en variable
+			$resultat = $_POST['resultat'];
+
+			// Compare les données
+			super_revision($nombre, $resultat, $aleatoire);
+		}
+		
+	?>
