@@ -1,67 +1,103 @@
-<?php
-	include 'header.html';
-    include 'fonction.php';
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Multiplication</title>
+    <link rel="icon" type="image/png" href="img/favicon.png" />
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.scss">
+</head>
+<body>
+    <div class="container">
+        <!-- Header -->
+        <header>
+          <div class="flex between align_center">
+            <p><img src="img/logo_multi.svg" width="150" height="48" alt="Logo multi"></p>
+              <h1 class="font_title text_center color_title">Les tables de multiplication</h1>
+          </div>
+            <!-- Menu -->
+            <nav class="flex around align_center">
+                <li><a href="index.php">Table du 3</a></li>
+                <li><a href="2_liste_tables.php">Liste des tables</a></li>
+                <li><a href="3_choix_tables.php">Chexbox des tables</a></li>
+                <li><a href="4_revision.php">Révision</a></li>
+                <li><a href="5_super_revision.php">Super mode révision</a></li>
+                <li><a href="6_revision_ajax.php">Révision avec Ajax</a></li>    
+            </nav>
+        </header>
+    </div>
+    <main>
+        <section>
 
-    echo "<h2>Révision</h2>";
-?>        
+            <div class="container text_center color">
+			  	<h2 class="font_title text_center color_title">Révision</h2>
+			  	<?php
+					include 'fonction.php';
+				?>        
   
+				<p>Choisi une table de multiplication</p>
+				<form action="" method="POST">
+					<select name="super_revision" id="">
+					<option value="1">Table 1</option>
+					<option value="2">Table 2</option>
+					<option value="3">Table 3</option>
+					<option value="4">Table 4</option>
+					<option value="5">Table 5</option>
+					<option value="6">Table 6</option>
+					<option value="7">Table 7</option>
+					<option value="8">Table 8</option>
+					<option value="9">Table 9</option>
+					<option value="10">Table 10</option>
+					</select>
+					
+					<button>OK</button>
+				</form>
 
-    <p>Choisi une table de multiplication</p>
-    <form action="" method="POST">
-		<select name="super_revision" id="">
-        <option value="1">Table 1</option>
-        <option value="2">Table 2</option>
-        <option value="3">Table 3</option>
-        <option value="4">Table 4</option>
-        <option value="5">Table 5</option>
-        <option value="6">Table 6</option>
-        <option value="7">Table 7</option>
-        <option value="8">Table 8</option>
-        <option value="9">Table 9</option>
-        <option value="10">Table 10</option>
-		</select>
-		
-		<button>OK</button>
-	</form>
+				<?php
+					if (isset($_POST['super_revision'])) {
+						// Récupère la valeur du tableau form
+						$nombre = $_POST['super_revision'];
+						
+						//Génère un nombre aléatoire quand on valide le premier form
+						$aleatoire = mt_rand (0, 10);
 
-	<?php
-		if (isset($_POST['super_revision'])) {
-			// Récupère la valeur du tableau form
-			$nombre = $_POST['super_revision'];
+						// Affiche pour l'utilisateur
+						echo $aleatoire . " x " . $nombre . " = ? " . "<br>";
+					}
+				?>
+
+				<form action="" method="post">
+					<!-- L'utilisateur entre un nombre -->
+					<input type="text" name='resultat' id="resultat" placeholder="Ex: 64">
+
+					<!-- Enregistre les $var avec input hidden (caché) -->
+					<input type="hidden" name ='aleatoireInput' value ='<?=$aleatoire?>'>
+					<input type="hidden" name ='super_revision' value ="<?=$nombre?>">
+					<button>VALIDER</button>
+
+				</form>
+
+				<?php
+					// Si le formulaire est validé, va à la suite
+					if (isset($_POST['resultat'])) 
+					{
+						// Récupère la valeur de aléatoire lors de la saisie du deuxième form
+						$aleatoire = $_POST['aleatoireInput'];
+
+						// Transforme la valeur de l'input en variable
+						$resultat = $_POST['resultat'];
+
+						// Compare les données
+						super_revision($nombre, $resultat, $aleatoire);
+					}
+					
+				?>
 			
-			//Génère un nombre aléatoire quand on valide le premier form
-			$aleatoire = mt_rand (0, 10);
+        	</div>
+        </section>
+    
+    </main>
 
-			// Affiche pour l'utilisateur
-			echo $aleatoire . " x " . $nombre . " = ? " . "<br>";
-		}
-	?>
-
-	
-	<form action="" method="post">
-		<!-- L'utilisateur entre un nombre -->
-		<input type="text" name='resultat' id="resultat" placeholder="Ex: 64">
-
-		<!-- Enregistre les $var avec input hidden (caché) -->
-		<input type="hidden" name ='aleatoireInput' value ='<?=$aleatoire?>'>
-		<input type="hidden" name ='super_revision' value ="<?=$nombre?>">
-		<button>VALIDER</button>
-
-	</form>
-
-
-	<?php
-		// Si le formulaire est validé, va à la suite
-		if (isset($_POST['resultat'])) 
-		{
-			// Récupère la valeur de aléatoire lors de la saisie du deuxième form
-			$aleatoire = $_POST['aleatoireInput'];
-
-			// Transforme la valeur de l'input en variable
-			$resultat = $_POST['resultat'];
-
-			// Compare les données
-			super_revision($nombre, $resultat, $aleatoire);
-		}
-		
-	?>
+</body>
+</html>
