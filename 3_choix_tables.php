@@ -1,17 +1,11 @@
 <?php
     include 'header.html';
+    include 'fonction.php';
 
     echo "<h2>Choisir une table de multiplication</h2>"
     
 ?>
-    <?php
-    // Création de la fonction de multiplication
-    function multiplication($nombre){ // nom de fontion "multi" avec son paramètre "nombre"
-        for ($i = 1; $i <= 10; $i++){
-            echo $nombre . " X " . $i . " = " . $nombre * $i . "<br>";
-        }
-    }
-    ?>
+    
     <!-- Formulaire table -->
     <form action="" method="post">
 

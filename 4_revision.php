@@ -1,23 +1,10 @@
 <?php
-    include 'header.html';
+	include 'header.html';
+    include 'fonction.php';
 
     echo "<h2>Révision</h2>";
 ?>        
-    <?php
-    // fonction pour afficher les commentaires de résultat
-    function super_revision($nombre, $resultat, $aleatoire)
-    {
-        echo "<br>" . $aleatoire . " X " . $nombre . " = " .$resultat . "<br><br>";
-
-        if ($resultat == ($aleatoire * $nombre)){
-            echo "Super! Tu es un vrai petit génie!";
-        }
-
-        else if ($resultat !== ($aleatoire * $nombre)){
-            echo "Dommage, ne lâche pas, continu!";
-        }
-    }
-    ?>
+  
 
     <p>Choisi une table de multiplication</p>
     <form action="" method="POST">

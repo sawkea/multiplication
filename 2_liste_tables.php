@@ -1,5 +1,6 @@
 <?php
     include 'header.html';
+    include 'fonction.php';
 
     echo "<h2>Choisir une table dans la liste</h2>";
 ?>
@@ -22,13 +23,8 @@
 
          
         <?php
-        // Création de la fonction de multiplication
-        function multiplication($nombre){ // nom de fontion "multi" avec son paramètre "nombre"
-            for ($i = 1; $i <= 10; $i++){
-             echo $nombre . " X " . $i . " = " . $nombre * $i . "<br>";
-            }
-        }
+
         //Si la variable table existe et n'est pas vide, alors la variable = table, sinon elle est NULL 
         $nombre = !empty($_POST['table']) ? $_POST['table'] : NULL;
   
-        multiplication($nombre);
+        echo multiplication($nombre);
