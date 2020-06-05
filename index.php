@@ -37,7 +37,7 @@
                     
                 // Afficher la table du 3
                 $nombre = 3; // variable "nombre" avec le paramètre 3
-                echo multiplication ($nombre); // afficher la fonction multi avec le paramètre 
+                echo multiplication ($nombre); // afficher la fonction multiplication avec le paramètre nombre ici affecté 3
                 ?>
 
               </div>
