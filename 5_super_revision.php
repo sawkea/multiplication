@@ -28,15 +28,43 @@
         </header>
     </div>
     <main>
+
         <section>
 
-              <div class="container text_center color">
-                <h2 class="font_title text_center color_title">Super révision</h2>
-                <?php
-                    include 'fonction.php';
-                ?>
+                <div class="container text_center color">
+                    <h2 class="font_title text_center color_title">Super révision</h2>
+                    <p>Essai de répondre aux 5 questions</p>
+                    <?php
+                        include 'fonction.php';
+                    ?>
+                    <!-- Formulaire "des questions" et bouton "valider"-->
+                    <form action="" method="post">
+                  
+                    <?php
+                    // boucle : pour avec ses paramètres (la variable i = 0; la variable i est inférieure à 5; la variable i est incrémentée){
+                        // pour cette boucle on appel la fonction superRevision(avec deux valeur aleatoire entre 0 et 10)
+                    
+                    for ($i = 0; $i < 5; $i++){
+                        superRevision(mt_rand(0 , 10), mt_rand(0, 10));
+                    }
+                    ?>
+                    <!-- bouton valider -->
+                    <button type="submit">Valider</button>
+                    </form>
+                    <?php 
+                        if (isset($_POST['aleatoire'])){
+                            for ($i = 0; $i < 5; $i++){
+                                echo $_POST['aleatoire'][$i]." X ".$_POST['nombre'][$i]." = " .$_POST['aleatoire'][$i]*$_POST['nombre'][$i]." <br>";
 
-              </div>
+                                if ($_POST['aleatoire'][$i]*$_POST['nombre'][$i]==$_POST['reponse'][$i]){
+                                    echo "Super ! C'est juste ! <br> <br> ";
+                                }
+                                else {
+                                    echo "Dommage, c'est faux ! <br> <br>";
+                                }
+                            }
+                        }
+                    ?>
         </section>
     
     </main>
