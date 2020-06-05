@@ -41,8 +41,8 @@
                     <form action="" method="post">
                   
                     <?php
-                    // boucle : pour avec ses paramètres (la variable i = 0; la variable i est inférieure à 5; la variable i est incrémentée){
-                        // pour cette boucle on appel la fonction superRevision(avec deux valeur aleatoire entre 0 et 10)
+                    // boucle : POUR avec ses paramètres (la variable i = 0; la variable i est inférieure à 5; la variable i est incrémentée){
+                        // dans cette boucle on appel la fonction superRevision(avec deux valeur aleatoire entre 0 et 10)
                     
                     for ($i = 0; $i < 5; $i++){
                         superRevision(mt_rand(0 , 10), mt_rand(0, 10));
@@ -51,6 +51,18 @@
                     <!-- bouton valider -->
                     <button type="submit">Valider</button>
                     </form>
+
+                    <!-- Boucle SI(la variable du formulaire aléatoire est déclarée et est différente de null
+                                   POUR (la variable i = 0; la variable i est inférieure à 5; la variable i est incrémentée){
+                                       AFFICHE la variable du formulaire dans le tableau :[var aléatoire] [ensuite incrémenter] X [var nombre] [ensuite incrémenter] = au calcul de la multiplication
+                                   } 
+                                        SI la multiplication est égale à la bonne réponse {
+                                            Affiche "super......"
+                                        }
+                                        SINON {
+                                            Affiche "Dommage...."
+                                        } 
+                                        -->
                     <?php 
                         if (isset($_POST['aleatoire'])){
                             for ($i = 0; $i < 5; $i++){

@@ -38,7 +38,7 @@
   
 				<p>Choisi une table de multiplication</p>
 				<form action="" method="POST">
-					<select name="super_revision" id="">
+					<select name="revision" id="">
 					<option value="1">Table 1</option>
 					<option value="2">Table 2</option>
 					<option value="3">Table 3</option>
@@ -55,25 +55,26 @@
 				</form>
 
 				<?php
-					if (isset($_POST['super_revision'])) {
+					if (isset($_POST['revision'])) {
 						// Récupère la valeur du tableau form
-						$nombre = $_POST['super_revision'];
+						$nombre = $_POST['revision'];
 						
 						//Génère un nombre aléatoire quand on valide le premier form
 						$aleatoire = mt_rand (0, 10);
 
 						// Affiche pour l'utilisateur
 						echo $aleatoire . " x " . $nombre . " = ? " . "<br>";
+						
 					}
 				?>
 
 				<form action="" method="post">
 					<!-- L'utilisateur entre un nombre -->
-					<input type="text" name='resultat' id="resultat" placeholder="Ex: 64">
+					<input type="text" name='resultat' id="resultat" placeholder="Ex: 32">
 
 					<!-- Enregistre les $var avec input hidden (caché) -->
 					<input type="hidden" name ='aleatoireInput' value ='<?=$aleatoire?>'>
-					<input type="hidden" name ='super_revision' value ="<?=$nombre?>">
+					<input type="hidden" name ='revision' value ="<?=$nombre?>">
 					<button>VALIDER</button>
 
 				</form>
@@ -88,8 +89,8 @@
 						// Transforme la valeur de l'input en variable
 						$resultat = $_POST['resultat'];
 
-						// Compare les données
-						super_revision($nombre, $resultat, $aleatoire);
+						// Compare les données avec la fonction
+						revision($nombre, $resultat, $aleatoire);
 					}
 					
 				?>

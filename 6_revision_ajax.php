@@ -30,13 +30,16 @@
     <main>
         <section>
 
-              <div class="container text_center color">
+            <div class="container text_center color">
               <h2 class="font_title text_center color_title">Révision ajax</h2>
                 <?php
                     include 'fonction.php';
                 ?>
 
-              </div>
+            
+
+
+            </div>
         </section>
     
     </main>
