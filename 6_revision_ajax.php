@@ -22,6 +22,7 @@
               <h2 class="font_title text_center color_title">Révision ajax</h2>
                 <?php
                     include 'fonction.php';
+                    echo "page en construction"
                 ?>
             </div>
         </section>

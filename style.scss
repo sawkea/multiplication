@@ -8,6 +8,9 @@
 	--color-3 :      #0086c3;
 	--color-4 :		 #383941;
 	--color-5 :		 #6b6c77;
+	--color-rep-true:  #0086c3;
+	--color-rep-false: rgb(206, 27, 27);
+
 	
 	--size-text :		1rem;
 	--size-title : 		1.875rem;
@@ -15,13 +18,13 @@
 	--cursor : url('img/pointer.png'),pointer;
 }
 
-
 body{
 	font-family: var(--font-principal);
 	font-weight: 400;
+	margin: 0;
 }
 .container{
-    width: 73.125rem;
+    width: 75%;
     margin-left: auto;
     margin-right: auto;
 }
@@ -65,6 +68,9 @@ li{
 
 .flex{
     display: flex;
+}
+.flex_wrap{
+	flex-wrap: wrap;
 }
 .align_center{
     align-items: center;
@@ -121,34 +127,54 @@ h1{
 .select-styled:hover{
 	background-color: var(--color-5);
 }
-/* RESET */
+input::placeholder{
+	color: rgb(182, 179, 179);
+	font-family: var(--font-principal);
+}
 
-html, body, div, span, 
-a, table, nav {
-	margin: 0;
-	padding: 0;
-	border: 0;
-	vertical-align: baseline;
+
+#ckeckstyle{
+	border: 3px solid blue;
+
 }
-/* HTML5 display-role reset for older browsers */ 
-footer, header, nav, section {
-	display: block;
+
+
+/* Color reponse true and false */
+.color-rep-false{
+	color: var(--color-rep-false);
 }
-body {
-	line-height: 1;
+.color-rep-true{
+	color: var(--color-rep-true);
 }
-ol, ul {
-	list-style: none;
-}
-blockquote, q {
-	quotes: none;
-}
-blockquote:before, blockquote:after,
-q:before, q:after {
-	content: '';
-	content: none;
-}
-table {
-	border-collapse: collapse;
-	border-spacing: 0;
+
+/* RESPONSIVE */
+
+/* media queries pour tablette avec un minimum de 992px de largeur */
+@media only screen and (max-width:1178px) {
+
+	header > div{
+			flex-direction: column;
+		}
+		
+	
+
+	/* button menu burger */
+	#cmdmenu { 
+		display:block;
+		position :fixed; 
+		top : 5.5rem; 
+		right :1rem; 
+		z-index :50;
+		padding:0.4375rem 0.625rem; 
+		color:var(--color-white);
+		background-color: var(--color-secondary);
+		border-radius:0.3125rem;
+		cursor:var(--cursor);
+	}
+	#cmdmenu:hover {	
+		background: var(--color-main); 
+	}
+
+
+    
 }

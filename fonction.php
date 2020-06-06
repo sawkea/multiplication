@@ -21,14 +21,15 @@ function revision($nombre, $resultat, $aleatoire)
     echo "<br>" . $aleatoire . "<span> X </span>" . $nombre . "<span> = </span>" .$resultat . "<br><br>";
     // affiche la variable aleatoire x la variable nombre = la variable resultat
     if ($resultat == ($aleatoire * $nombre)){
-        echo "Super ! Tu es un vrai petit génie !";
+        echo "<div class=\"color-rep-true\">Super ! Tu es un vrai petit génie !</div>";
+    
     
     }
     // SI la variable resultat est égale (au calcul de la variable aleatoire x nombre)
         // AFFICHE super....
 
     else if ($resultat !== ($aleatoire * $nombre)){
-        echo "Dommage, ne lâche pas, continu !";
+        echo "<div class=\"color-rep-false\">Dommage, ne lâche pas, continu !</div>";
     }
     // SINON SI la variable resultat est différente (au calcul de la variable aleatoire x nombre)
         // AFFICHE dommage.....
@@ -40,7 +41,7 @@ function revision($nombre, $resultat, $aleatoire)
 // nom superRevision(avec comme paramètres les variables "aléatoire" et "nombre")
 function superRevision($aleatoire, $nombre) 
 {
-    echo "<br>" . $aleatoire . "<span> X </span>" . $nombre . "<span> = </span> <input type=\"text\" name=\"reponse[]\"> <br><br>";
+    echo "<br>" . $aleatoire . "<span> X </span>" . $nombre . "<span> = </span> <input type=\"text\" name=\"reponse[]\"> <br>";
     // affiche la variable aléatoire x variable nombre = dans un input text écrit la réponse
     echo "<input type=\"hidden\" value=\"".$aleatoire."\" name=\"aleatoire[]\">";
     // dans un input caché stocke la valeur de la variable aléatoire dans un tableau

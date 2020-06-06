@@ -32,13 +32,14 @@
                     // création d'une ckeckbox en php avec boucle for
                     for ($i = 1; $i <= 10; $i++){
     
-                        echo("<INPUT TYPE='checkbox' name='check_list[]' VALUE='$i' />");
+                        echo("<INPUT TYPE='checkbox' id='ckeckstyle' name='check_list[]' VALUE='$i' />");
                         echo " ".$i." <br />";
                     }
                     ?>
     
                     <div>
-                        <button type="submit">Valider</button>
+                        <br>
+                        <button type="submit" class="styled">Valider</button>
                     </div>
                 </form>
     
