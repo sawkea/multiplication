@@ -1,8 +1,3 @@
-
-
-
-
-
 /* Variables générales */
 :root {
 	--font-principal : 'Roboto', sans-serif;
@@ -10,11 +5,10 @@
 
 	--color-1 :		 #73e8ff;
 	--color-2 :		 #29b6f6;
-    --color-3 :      #0086c3;
-
-
-
-
+	--color-3 :      #0086c3;
+	--color-4 :		 #383941;
+	--color-5 :		 #6b6c77;
+	
 	--size-text :		1rem;
 	--size-title : 		1.875rem;
 
@@ -25,13 +19,15 @@
 body{
 	font-family: var(--font-principal);
 	font-weight: 400;
-
 }
-
 .container{
     width: 73.125rem;
     margin-left: auto;
     margin-right: auto;
+}
+.font_principal{
+	font-family: var(--font-principal);
+	font-weight: 400;
 }
 .font_title{
 	font-family: var(--font-title);
@@ -40,11 +36,19 @@ body{
 .color_title{
     color: var(--color-3);
 }
-nav{
+.color-text{
+	color: var(--color-4);
+}
+span{
+	font-family: var(--font-principal);
+	font-weight: 300;
+}
+ul{
     background-color: var(--color-3);
     width : 100%;
     height: 3rem;
-    font-family: var(--font-title);
+	font-family: var(--font-title);
+	padding-left: 0;
 }
 
 a{  
@@ -57,9 +61,7 @@ a:hover{
 
 li{
     list-style: none;
-	padding-left: 0;
 }
-
 
 .flex{
     display: flex;
@@ -81,12 +83,44 @@ li{
 h1{
 	text-transform: uppercase;
 }
+.line-height-text{
+	line-height: 1.5rem;
+}
+.size-div{
+	width: 25%;
+}
 
+/* button */
+.styled {
+    border: 0;
+    line-height: 1.75rem;
+    padding: 0 20px;
+    font-size: 1rem;
+    text-align: center;
+    color: #fff;
+    border-radius: 8px;
+	background-color: var(--color-4);
+	font-family: var(--font-title);
+	font-size : var(--size-text);
+}
+.styled:hover{
+	background-color: var(--color-5);
+}
 
-
-
-
-
+/* liste déroulante */
+.select-styled{
+	background-color: var(--color-4);
+	border-radius: 8px;
+	border: none;
+	height: 1.75rem;
+	width: 6rem;
+	font-family: var(--font-title);
+	font-size : var(--size-text);
+	color: white;
+}
+.select-styled:hover{
+	background-color: var(--color-5);
+}
 /* RESET */
 
 html, body, div, span, 
