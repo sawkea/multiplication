@@ -6,7 +6,7 @@
 // nom de fontion "multi" avec son paramètre "nombre"
     function multiplication($nombre){ 
         for ($i = 1; $i <= 10; $i++){
-            echo $nombre . " X " . $i . " = " . $nombre * $i . "<br>";
+            echo $nombre . "<span> X </span>" . $i . "<span> = </span>" . $nombre * $i . "<br>";
         }
     }
         // POUR (la variable i = 0; la variable i est inférieure ouégale à 10; la variable i est incrémentée){
@@ -18,7 +18,7 @@
 // nom revision(avec comme paramètres les variables "nombre, resultat et aléatoire")
 function revision($nombre, $resultat, $aleatoire)
 {
-    echo "<br>" . $aleatoire . " X " . $nombre . " = " .$resultat . "<br><br>";
+    echo "<br>" . $aleatoire . "<span> X </span>" . $nombre . "<span> = </span>" .$resultat . "<br><br>";
     // affiche la variable aleatoire x la variable nombre = la variable resultat
     if ($resultat == ($aleatoire * $nombre)){
         echo "Super ! Tu es un vrai petit génie !";
@@ -40,7 +40,7 @@ function revision($nombre, $resultat, $aleatoire)
 // nom superRevision(avec comme paramètres les variables "aléatoire" et "nombre")
 function superRevision($aleatoire, $nombre) 
 {
-    echo "<br>" . $aleatoire . " X " . $nombre . " =  <input type=\"text\" name=\"reponse[]\"> <br><br>";
+    echo "<br>" . $aleatoire . "<span> X </span>" . $nombre . "<span> = </span> <input type=\"text\" name=\"reponse[]\"> <br><br>";
     // affiche la variable aléatoire x variable nombre = dans un input text écrit la réponse
     echo "<input type=\"hidden\" value=\"".$aleatoire."\" name=\"aleatoire[]\">";
     // dans un input caché stocke la valeur de la variable aléatoire dans un tableau

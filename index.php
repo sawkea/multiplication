@@ -20,15 +20,17 @@
     <main>
         <section>
 
-              <div class="container text_center color">
+              <div class="container text_center color size-div">
               <h2 class="font_title text_center color_title">Voici la table X 3</h2>
-                <?php
-                include 'fonction.php';
-                    
-                // Afficher la table du 3
-                $nombre = 3; // variable "nombre" avec le paramètre 3
-                echo multiplication ($nombre); // afficher la fonction multiplication avec le paramètre nombre ici affecté 3
-                ?>
+                <div class="color-text line-height-text font_title">
+                  <?php
+                  include 'fonction.php';
+                      
+                  // Afficher la table du 3
+                  $nombre = 3; // variable "nombre" avec le paramètre 3
+                  echo multiplication ($nombre); // afficher la fonction multiplication avec le paramètre nombre ici affecté 3
+                  ?>
+                </div>
 
               </div>
         </section>
