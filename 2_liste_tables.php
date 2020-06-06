@@ -11,29 +11,17 @@
 <body>
     <div class="container">
         <!-- Header -->
-        <header>
-          <div class="flex between align_center">
-            <p><img src="img/logo_multi.svg" width="150" height="48" alt="Logo multi"></p>
-              <h1 class="font_title text_center color_title">Les tables de multiplication</h1>
-          </div>
-            <!-- Menu -->
-            <nav class="flex around align_center">
-                <li><a href="index.php">Table du 3</a></li>
-                <li><a href="2_liste_tables.php">Liste des tables</a></li>
-                <li><a href="3_choix_tables.php">Chexbox des tables</a></li>
-                <li><a href="4_revision.php">Révision</a></li>
-                <li><a href="5_super_revision.php">Super mode révision</a></li>
-                <li><a href="6_revision_ajax.php">Révision avec Ajax</a></li>    
-            </nav>
-        </header>
+        <?php
+            include 'headerNav.html';
+        ?>
     </div>
     <main>
         <section>
         <div class="container text_center color">
+            <h2 class="font_title text_center color_title">Choisir une table dans la liste</h2>
             <?php
                 include 'fonction.php';
             ?>
-            <h2 class="font_title text_center color_title">Choisir une table dans la liste</h2>
             <!-- formulaire pour choisir une table de multilplication -->
             <form action="2_liste_tables.php" method="post">
                 <select name="table">
