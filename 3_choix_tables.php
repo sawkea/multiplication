@@ -22,7 +22,7 @@
             <?php
                 include 'fonction.php';
             ?>
-            <h2 class="font_title text_center color_title">Choisir une table de multiplication</h2>
+            <h2 class="font_title text_center color_title">Choisi une table</h2>
             <!-- Formulaire table -->
             <div class="color-text line-height-text font_title">
                 <form action="" method="post">
@@ -33,15 +33,16 @@
                     for ($i = 1; $i <= 10; $i++){
     
                         echo("<INPUT TYPE='checkbox' id='ckeckstyle' name='check_list[]' VALUE='$i' />");
-                        echo " ".$i." <br />";
+                        echo " ".$i." ";
                     }
                     ?>
     
                     <div>
                         <br>
-                        <button type="submit" class="styled">Valider</button>
+                        <button type="submit" class="styled">Valider</button> 
                     </div>
                 </form>
+                <br>
     
                 <?php
     
@@ -51,7 +52,7 @@
                         // Pour chaque propriété, une instruction est exécutée.
                         foreach ($_POST['check_list'] as $i) {
                             $nombre = $i;
-                            multiplication($nombre);
+                            multiplication($nombre); 
                         }
                     }
                 ?>

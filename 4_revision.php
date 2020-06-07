@@ -60,7 +60,7 @@
 		
 						<form action="" method="post">
 							<!-- L'utilisateur entre un nombre -->
-							<input type="text" name='resultat' id="resultat" placeholder="Ex: 32" class="select-styled">
+							<input type="text" name='resultat' id="resultat" placeholder="Ex: 32" class="placeholder-styled">
 		
 							<!-- Enregistre les $var avec input hidden (caché) -->
 							<input type="hidden" name ='aleatoireInput' value ='<?=$aleatoire?>'>

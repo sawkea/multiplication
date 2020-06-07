@@ -18,7 +18,7 @@
     <main>
         <section>
         <div class="container text_center color">
-            <h2 class="font_title text_center color_title">Choisir une table dans la liste</h2>
+            <h2 class="font_title text_center color_title">Choisi une table</h2>
            
             <div class="color-text line-height-text font_title">
                 <?php
@@ -39,7 +39,7 @@
                             <option value="9">Table 9</option>
                             <option value="10">Table 10</option>
                         </select>
-                            <input type="submit" name="valider" value="OK" class="styled">
+                            <input type="submit" name="valider" value="Valider" class="styled">
                     </form>
                 
         

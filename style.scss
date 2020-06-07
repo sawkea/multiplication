@@ -46,11 +46,12 @@ span{
 	font-family: var(--font-principal);
 	font-weight: 300;
 }
+.margin-bottom{
+	margin-bottom: 1rem;
+}
 
 /* Menu */
-#button_menu { 
-    display:none;
-  }
+
 ul{
     background-color: var(--color-3);
     width : 100%;
@@ -104,8 +105,8 @@ h1{
 /* button */
 .styled {
     border: 0;
-    line-height: 1.75rem;
-    padding: 0 20px;
+	height: 2rem;
+	width: 5rem;
     font-size: 1rem;
     text-align: center;
     color: #fff;
@@ -123,7 +124,7 @@ h1{
 	background-color: var(--color-4);
 	border-radius: 8px;
 	border: none;
-	height: 1.75rem;
+    height: 2rem;
 	width: 6rem;
 	font-family: var(--font-title);
 	font-size : var(--size-text);
@@ -137,9 +138,27 @@ input::placeholder{
 	font-family: var(--font-principal);
 }
 
+/* placeholder styled */
+.placeholder-styled{
+	border: 0;
+	height: 1.5rem;
+	width: 6rem;
+    font-size: 1rem;
+    text-align: center;
+    color: #fff;
+    border-radius: 8px;
+	background-color: var(--color-4);
+	font-family: var(--font-title);
+	font-size : var(--size-text);
+}
 
 #ckeckstyle{
-	border: 3px solid blue;
+	border: 3px solid red;
+	width: 1.2rem;
+	height: 1.2rem;
+	border-radius: 0.2em;
+	border: 1px solid var(--color-3);
+
 
 }
 
@@ -161,16 +180,14 @@ input::placeholder{
 			flex-direction: column;
 		}
 		
-	
-
 	/* button menu burger */
 	#button_menu { 
 		display:block;
 		position :fixed; 
-		top : 6.3rem; 
+		top : 1rem; 
 		right :1rem; 
 		z-index :50;
-		padding:0.5rem 0.6875rem; 
+		padding: 0.625rem 0.8125rem; 
 		color: var(--color-1);
 		background-color: var(--color-3);
 		border-radius:0.3125rem;
@@ -202,13 +219,10 @@ input::placeholder{
 		color: var(--color-1);
 	}
 
-
-
-
 	#lemenu{
 		position: fixed;
 		right :1rem;
-		top: 7rem;
+		top: 6rem;
 		width: 100%; 
 	}
 	#lemenu > ul{
@@ -231,6 +245,23 @@ input::placeholder{
 	#lemenu > a:hover {	
 		color:var(--color-secondary);
 	}
+	
+ 
+}
 
-    
+/* media queries pour tablette avec un minimum de 649px de largeur */
+@media only screen and (max-width:649px) {
+	#lemenu{
+		top: 7.5rem;
+	}
+	#button_menu { 
+		top : 1rem; 
+	}
+
+	
+	/* placeholder styled */
+
+	.size-div{
+		width: 55%;
+	}
 }

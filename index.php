@@ -21,7 +21,7 @@
         <section>
 
               <div class="container text_center color size-div">
-              <h2 class="font_title text_center color_title">Voici la table X 3</h2>
+              <h2 class="font_title text_center color_title">Voici la table du 3</h2>
                 <div class="color-text line-height-text font_title">
                   <?php
                   include 'fonction.php';

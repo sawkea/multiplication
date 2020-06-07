@@ -8,8 +8,11 @@
         for ($i = 1; $i <= 10; $i++){
             echo $nombre . "<span> X </span>" . $i . "<span> = </span>" . $nombre * $i . "<br>";
         }
+        echo "<div class=\"margin-bottom\"></div>";
     }
-        // POUR (la variable i = 0; la variable i est inférieure ouégale à 10; la variable i est incrémentée){
+    
+
+        // POUR (la variable i = 0; la variable i est inférieure ou égale à 10; la variable i est incrémentée){
                 // AFFICHE  variable nombre X variable i = (le calcul) variable nombre x incrémantation variable i
 
 
