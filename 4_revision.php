@@ -90,7 +90,8 @@
         	</div>
         </section>
     
-    </main>
-
+	</main>
+	
+	<script src="script.js"></script>
 </body>
 </html>
